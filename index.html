@@ -28,7 +28,7 @@
 
         <button class="scoredisplay" id="scorebutton">Show More Scores</button>
 
-        <form id='scoresform' style="visibility: hidden; ">
+        <form id='scoresform' style="visibility: hidden;">
     <label style="position:absolute; top: 125px; left: 750px;" for="googlefood">Google Food Score:</label>
     <input style="position:absolute; top: 125px; left: 950px; width: 50px;" id="googlefood" type="text" readonly />
     <label style="position:absolute; top: 155px; left: 750px;" for="googlecommunity">Google Community Score:</label>
@@ -66,7 +66,6 @@
             <label class="scoredisplay" for="average">Average Score:</label>
             <input id="average" type="text" readonly/>
         </form>
-
 
         <!-- Dropdown menu for multiple heatmap layers  -->
         <form id="layerselector">
@@ -131,16 +130,16 @@
 
         <!-- This is for the map view (leaflet.js) -->
         <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-        <script src="heatmap.js"></script>
-        <script src="leaflet-heatmap.js"></script>
+        <script src="js/dependencies/heatmap.js"></script>
+        <script src="js/dependencies/leaflet-heatmap.js"></script>
 
         <!-- Set up Google Maps Javascript API -->
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdsGq2g7EJPonPoSutU98iQKL-9W3odG8&libraries=places" type="text/javascript"></script>
 
         <!--  Default  Data File -->
         <script src="DataFiles/SoofaDataCambridge.js"></script>
+
         <!-- Code for changing cities, resets all values and markers  -->
         <script type="text/javascript" src="js/main.js"></script>
-
     </body>
 </html>
