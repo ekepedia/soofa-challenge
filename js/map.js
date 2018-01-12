@@ -23,6 +23,7 @@ var baseMaps = {
 /// Add Markers to Map on click, plus change scores when marker is dragged///
 
 function onMapClick(e) {
+
     marker = new L.marker(e.latlng, {draggable:'true'});
     marker.on('click', markerOnClick);
     markercontainer.push(marker);

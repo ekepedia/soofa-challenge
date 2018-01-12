@@ -6,12 +6,13 @@ function geocodeLatLng(geocoder, lat, lng) {
     geocoder.geocode({'location': latlng}, function(results, status) {
         if (status === 'OK') {
             if (results[1]) {
-                document.getElementById('address').value = results[0].formatted_address;
+                console.log(results[0]);
+                document.getElementById('address').innerHTML = results[0].formatted_address.replace(",",",<br>");
             } else {
-                document.getElementById('address').value = 'No results found';
+                document.getElementById('address').innerHTML = 'No results found';
             }
         } else {
-            document.getElementById('address').value = 'Geocoder failed due to: ' + status;
+            document.getElementById('address').innerHTML = 'Geocoder failed due to: ' + status;
         }
     });
 }
@@ -199,18 +200,39 @@ google.maps.event.addListener(searchBox, 'places_changed', function(){
 
 /// Code for Showing/Hiding Scores ///
 
-var theButton = document.getElementById('scorebutton');
+var theButton = document.getElementById('marker-icon');
 var shown = false;
 theButton.onclick = function() {
     if (shown){
-        document.getElementById('scoresform').style.visibility='hidden';
+        document.getElementById('sf-side-bar').style.height='50px';
         shown = !shown;
     }
     else{
-        document.getElementById('scoresform').style.visibility='visible';
+        document.getElementById('sf-side-bar').style.height='350px';
         shown = !shown;
     }
-}
+};
+
+
+var helpIcon = document.getElementById('help-icon');
+var helpShown = false;
+helpIcon.onclick = function() {
+    console.log("S");
+    if (helpShown){
+        document.getElementById('sf-help-bar').style.height='50px';
+        document.getElementById('sf-help-bar').style.width='50px';
+        document.getElementById('sf-help-bar').style.padding='0';
+        document.getElementById('help-icon').style.margin='15%';
+        helpShown = !helpShown;
+    }
+    else{
+        document.getElementById('sf-help-bar').style.width='250px';
+        document.getElementById('sf-help-bar').style.padding='25px';
+        document.getElementById('help-icon').style.margin='0%';
+        document.getElementById('sf-help-bar').style.height='270px';
+        helpShown = !helpShown;
+    }
+};
 
 // Code for Dashed Recntangle //
 
