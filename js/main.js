@@ -6,7 +6,6 @@ function geocodeLatLng(geocoder, lat, lng) {
     geocoder.geocode({'location': latlng}, function(results, status) {
         if (status === 'OK') {
             if (results[1]) {
-                console.log(results[0]);
                 document.getElementById('address').innerHTML = results[0].formatted_address.replace(",",",<br>");
             } else {
                 document.getElementById('address').innerHTML = 'No results found';
@@ -217,7 +216,6 @@ theButton.onclick = function() {
 var helpIcon = document.getElementById('help-icon');
 var helpShown = false;
 helpIcon.onclick = function() {
-    console.log("S");
     if (helpShown){
         document.getElementById('sf-help-bar').style.height='50px';
         document.getElementById('sf-help-bar').style.width='50px';
