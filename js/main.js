@@ -53,7 +53,9 @@ document.getElementById('selectcity').onchange = function(){
     document.head.appendChild(myScript);
     myScript.onload = function() {
         compositelayer.setData({max:0, data: []});
-        document.getElementById("layerselector").reset();
+
+        resetChecks();
+
         map.panTo(new L.LatLng(lat, lng));
         for (var i = 0; i < markercontainer.length; i++){
             map.removeLayer(markercontainer[i]);
@@ -70,6 +72,16 @@ document.getElementById('selectcity').onchange = function(){
     };
 
 };
+
+function resetChecks() {
+    var checks = document.querySelectorAll('#checkboxes input[type="checkbox"]');
+    for(var i =0; i< checks.length;i++){
+        var check = checks[i];
+        if(!check.disabled){
+            check.checked = false;
+        }
+    }
+}
 
 
 /// Function for adding multiple heatmaps together ///
