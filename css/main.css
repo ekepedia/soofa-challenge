@@ -1,0 +1,120 @@
+body { font-family:sans-serif; }
+
+h1 { position:absolute; background:white; padding:5px;}
+
+h2 {
+    top: 5px; left: 450px; position: absolute;
+}
+
+/* Important for leaflet map  */
+.leaflet-container {
+    background: rgba(0,0,0,.8) !important;
+}
+
+
+/* Css for checkboxes */
+.multiselect {
+    width: 200px;
+}
+
+.selectBox {
+    position: absolute;
+}
+
+.selectBox select {
+    width: 100%;
+}
+
+.overSelect {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+#checkboxes {
+    display: none;
+    border: 1px #dadada solid;
+    font-weight:100;
+}
+
+#checkboxes label {
+    display: block;
+}
+
+/*Css for 'averge score' button*/
+.scoredisplay {
+    background-color: #f44336;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+}
+
+/*Css for warning box*/
+
+.danger {
+    background-color: #ffdddd;
+    border-left: 6px solid #f44336;
+    width: 400px;
+    position:absolute;
+    top: 450px;
+    left: 725px;
+}
+
+.leaflet-zoom-hide {
+    position: absolute !important;
+}
+
+#map{
+    position:absolute;
+    top: 105px;
+    height: 500px;
+    width: 700px;
+}
+
+#scorebutton {
+    position:absolute;
+    top: 30px;
+    left: 975px;
+    background-color: #2554C7;
+}
+
+#city-dropdown{
+    position:absolute;
+    top: 75px;
+    left: 450px;
+}
+
+.scoredisplay {
+    position:absolute;
+    top: 30px;
+    left: 750px;
+}
+
+#average {
+    position:absolute;
+    top: 30px;
+    left: 900px;
+    width: 50px;
+    height: 30px;
+    font-size: 14px;
+}
+
+#layerselector {
+    position:absolute;
+    top: 75px;
+    left: 750px;
+}
+
+#mapsearch {
+    position:absolute;
+    top: 70px;
+    width: 400px;
+    height:20px;
+    border-style: groove;
+}
