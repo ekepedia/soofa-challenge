@@ -6,23 +6,16 @@ function geocodeLatLng(geocoder, lat, lng) {
     geocoder.geocode({'location': latlng}, function(results, status) {
         if (status === 'OK') {
             if (results[1]) {
-                document.getElementById('address').value = results[0].formatted_address;
+                console.log(results[0]);
+                document.getElementById('address').innerHTML = results[0].formatted_address.replace(",",",<br>");
             } else {
-                document.getElementById('address').value = 'No results found';
+                document.getElementById('address').innerHTML = 'No results found';
             }
         } else {
-            document.getElementById('address').value = 'Geocoder failed due to: ' + status;
+            document.getElementById('address').innerHTML = 'Geocoder failed due to: ' + status;
         }
     });
 }
-
-/// Heatmap Specifications ///
-
-
-/// If you want to have different colors, put this: gradient: {'.5': 'blue', '.8': 'red', '.95': 'white'}
-
-
-
 
 //// Scoring Section ////
 
@@ -49,7 +42,6 @@ function closestscore (lat, lng, arr) {
 }
 
 /// Return scores between 0 and 10 ///
-
 function calculatescore(lat, lng, heatmapdata){
     score = closestscore(lat, lng, heatmapdata.data);
     return Math.round(1000*score/heatmapdata.max)/100; // Returns two decimal places
@@ -81,7 +73,6 @@ document.getElementById('selectcity').onchange = function(){
 
 
 /// Function for adding multiple heatmaps together ///
-
 function layertrigger(keyword){
     index = layersactive.indexOf(keyword);
     if (index > -1){
@@ -108,7 +99,6 @@ function layertrigger(keyword){
 
 
 /// Function to clone a javascript object ///
-
 function clone(obj) {
     // Handle the 3 simple types, and null or undefined
     if (null == obj || "object" != typeof obj) return obj;
@@ -155,7 +145,6 @@ function showCheckboxes() {
 }
 
 /// Code for Searchbox adding marker ///
-
 var searchBox = new google.maps.places.SearchBox(document.getElementById('mapsearch'));
 google.maps.event.addListener(searchBox, 'places_changed', function(){
 
@@ -198,19 +187,38 @@ google.maps.event.addListener(searchBox, 'places_changed', function(){
 });
 
 /// Code for Showing/Hiding Scores ///
-
-var theButton = document.getElementById('scorebutton');
+var theButton = document.getElementById('marker-icon');
 var shown = false;
 theButton.onclick = function() {
     if (shown){
-        document.getElementById('scoresform').style.visibility='hidden';
+        document.getElementById('sf-side-bar').style.height='50px';
         shown = !shown;
     }
     else{
-        document.getElementById('scoresform').style.visibility='visible';
+        document.getElementById('sf-side-bar').style.height='350px';
         shown = !shown;
     }
-}
+};
 
-// Code for Dashed Recntangle //
+
+/// Code for Showing/Hiding Heat Maps ///
+var helpIcon = document.getElementById('help-icon');
+var helpShown = false;
+helpIcon.onclick = function() {
+    console.log("S");
+    if (helpShown){
+        document.getElementById('sf-help-bar').style.height='50px';
+        document.getElementById('sf-help-bar').style.width='50px';
+        document.getElementById('sf-help-bar').style.padding='0';
+        document.getElementById('help-icon').style.margin='15%';
+        helpShown = !helpShown;
+    }
+    else{
+        document.getElementById('sf-help-bar').style.height='270px';
+        document.getElementById('sf-help-bar').style.width='250px';
+        document.getElementById('sf-help-bar').style.padding='25px';
+        document.getElementById('help-icon').style.margin='0%';
+        helpShown = !helpShown;
+    }
+};
 
