@@ -1,0 +1,264 @@
+body { font-family:sans-serif; }
+
+h1 { position:absolute; background:white; padding:5px;}
+
+/* Important for leaflet map  */
+.leaflet-container {
+    background: rgba(0,0,0,.8) !important;
+}
+
+
+/* Css for checkboxes */
+.multiselect {
+    width: 200px;
+}
+
+.selectBox {
+    position: absolute;
+}
+
+.selectBox select {
+    width: 100%;
+}
+
+.overSelect {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+#checkboxes {
+    font-weight:100;
+}
+
+#checkboxes label {
+    display: block;
+}
+
+/*Css for 'averge score' button*/
+.scoredisplay {
+    background-color: #f44336;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+}
+
+/*Css for warning box*/
+
+.danger {
+    display: none;
+    background-color: #ffdddd;
+    border-left: 6px solid #f44336;
+    width: 400px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.leaflet-zoom-hide {
+    position: absolute !important;
+}
+
+#map{
+    position:absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+#scorebutton {
+    position:absolute;
+    top: 30px;
+    left: 975px;
+    background-color: #2554C7;
+}
+
+#average {
+    width: 50px;
+    height: 50px;
+    font-size: 14pt;
+    border: none;
+    padding: 0;
+    float: right;
+    font-weight: bold;
+    border-radius: 100px;
+}
+
+#mapsearch {
+    width: 300px;
+    height: 25px;
+    float: left;
+    border: solid grey 1px;
+    border-radius: 5px;
+    margin-left: 35px;
+    margin-top: 10px;
+    font-size: 10pt;
+    color: black;
+    background-color: white;
+    padding-left: 10px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    opacity: 1; /* Firefox */
+}
+
+#sf-nav {
+    height: 50px;
+    width: 90%;
+    margin-left: 5%;
+    background-color: white;
+    position: absolute;
+    z-index: 9999;
+    text-align: center;
+    color: #1B1B1B;
+    float: left;
+    border-radius: 50px;
+    box-shadow: 0 0 10px 1px darkgrey;
+}
+
+#sf-side-bar {
+    height: 50px;
+    min-width: 400px;
+    margin-left: 5%;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    z-index: 9999;
+    text-align: left;
+    color: black;
+    float: left;
+    border-radius: 50px;
+    box-shadow: 0 0 10px 1px darkgrey;
+    padding: 1px 25px;
+    transition: height 1s;
+    -webkit-transition: height 0.5s ease;
+    overflow: hidden;
+}
+
+#sf-help-bar {
+    height: 50px;
+    width: 50px;
+    margin-right: 5%;
+    background-color: white;
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+    z-index: 9999;
+    text-align: left;
+    color: black;
+    float: left;
+    border-radius: 50px;
+    box-shadow: 0 0 10px 1px darkgrey;
+    overflow: hidden;
+
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
+#help-icon {
+    float: right;
+    margin: 15%;
+    width: 35px;
+
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
+#sf-help-bar h3 {
+    margin: 0;
+}
+
+#checkboxes label {
+    margin-top: 2px;
+    background-color: white;
+}
+
+#sf-nav h2{
+    float: left;
+    margin: 0;
+    margin-left: 25px;
+    line-height: 50px;
+    font-size: 14pt;
+}
+
+#city-dropdown{
+    float: right;
+    margin-right: 25px;
+    margin-top: 9px;
+    height: 50px;
+}
+
+#city-dropdown select{
+    border: none;
+    font-size: 12pt;
+    height: 34px;
+    width: 200px;
+}
+
+#city-dropdown select:focus{
+    border: none;
+    outline: 0;
+}
+
+#address {
+    margin: 0;
+    margin-left: 20px;
+    font-size: 10pt;
+    margin-top: 10px;
+    float: left;
+}
+
+#scoresform{
+    font-size: 10pt;
+    clear: left;
+    margin-top: 20px;
+}
+
+#scoresform input {
+    border: none;
+    margin-top: 10px;
+    font-size: 10pt;
+}
+
+#marker-icon {
+    float: left;
+    margin-top: 8px;
+    width: 20px;
+}
+
+@media screen and (max-device-width: 820px){
+    #mapsearch {
+        width: 200px;
+    }
+}
+
+@media screen and (max-device-width: 710px){
+    #mapsearch {
+       display: none;
+    }
+}
+
+@media screen and (max-device-width: 430px){
+
+    #city-dropdown {
+        float: none;
+    }
+
+    #city-dropdown select {
+        font-size: 10pt;
+        width: 150px;
+    }
+
+    #sf-nav h2 {
+        display: none;
+    }
+}
