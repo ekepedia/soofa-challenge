@@ -1,5 +1,4 @@
 /// Default Values for heatmap
-
 var googlefoodData = {max: 0, data: []};
 var googlecommunityData = {max: 0, data: []};
 var googlebigshopsData = {max: 0, data: []};

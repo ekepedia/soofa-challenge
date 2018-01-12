@@ -8,132 +8,118 @@
     </head>
     <body>
 
-        <div id="sf-nav">
-            <h2>Soofa Map Tool</h2>
-            <div>
-                <input type="text" id="mapsearch" placeholder="Enter Location for Marker">
-            </div>
-            <form id="city-dropdown">
-                <select  id="selectcity">
-                    <option value="Cambridge">Cambridge, MA</option>
-                    <option value="Providence">Providence, RI</option>
-                    <option value="Trenton">Trenton, NJ</option>
-                    <option value="Cuero">Cuero, TX</option>
-                    <option value="Portage">Portage, MI</option>
-                    <option value="Lafayette">Lafayette, LA</option>
-                    <option value="ArlingtonHeights">Arlington Heights, IL</option>
-                </select>
-            </form>
+    <!-- Set up main top nav -->
+    <div id="sf-nav">
+        <h2>Soofa Map Tool</h2>
+        <div>
+            <input type="text" id="mapsearch" placeholder="Enter Location for Marker">
         </div>
+        <form id="city-dropdown">
+            <select  id="selectcity">
+                <option value="Cambridge">Cambridge, MA</option>
+                <option value="Providence">Providence, RI</option>
+                <option value="Trenton">Trenton, NJ</option>
+                <option value="Cuero">Cuero, TX</option>
+                <option value="Portage">Portage, MI</option>
+                <option value="Lafayette">Lafayette, LA</option>
+                <option value="ArlingtonHeights">Arlington Heights, IL</option>
+            </select>
+        </form>
+    </div>
 
-        <div id="sf-side-bar">
-            <img id="marker-icon" style="float: left; margin-top: 8px;" width="20px" src="http://cdn.leafletjs.com/leaflet-0.7.3/images/marker-icon-2x.png"/>
-            <p style="float: left" id="address" readonly>
-                Click on the map to create a draggable marker.<br>
-                The address and overall rating will show here.
-            </p>
-            <input type="text" id="average" value="N/A" readonly/>
-            <form id='scoresform' style="clear: left; margin-top: 20px;">
-                <label for="googlefood">Google Food Score:</label>
-                <input id="googlefood" type="text" readonly /><br>
+    <!-- Set up side nav -->
+    <div id="sf-side-bar">
+        <img id="marker-icon" src="http://cdn.leafletjs.com/leaflet-0.7.3/images/marker-icon-2x.png"/>
+        <p id="address" readonly>
+            Click on the map to create a draggable marker.<br>
+            The address and overall rating will show here.
+        </p>
+        <input type="text" id="average" value="N/A" readonly/>
+        <form id='scoresform' >
+            <label for="googlefood">Google Food Score:</label>
+            <input id="googlefood" type="text" readonly /><br>
 
-                <label for="googlecommunity">Google Community Score:</label>
-                <input id="googlecommunity" type="text" readonly/><br>
+            <label for="googlecommunity">Google Community Score:</label>
+            <input id="googlecommunity" type="text" readonly/><br>
 
-                <label for="googlebigshops">Google Big Shops Score:</label>
-                <input id="googlebigshops" type="text" readonly/><br>
+            <label for="googlebigshops">Google Big Shops Score:</label>
+            <input id="googlebigshops" type="text" readonly/><br>
 
-                <label for="googlesmallshops">Google Small Shops Score:</label>
-                <input id="googlesmallshops" type="text" readonly/><br>
+            <label for="googlesmallshops">Google Small Shops Score:</label>
+            <input id="googlesmallshops" type="text" readonly/><br>
 
-                <label for="googletransit">Google Transit Score:</label>
-                <input id="googletransit" type="text" readonly/><br>
+            <label for="googletransit">Google Transit Score:</label>
+            <input id="googletransit" type="text" readonly/><br>
 
-                <label for="googletransit">Google Tourist Score:</label>
-                <input id="googletourist" type="text" readonly/><br>
+            <label for="googletransit">Google Tourist Score:</label>
+            <input id="googletourist" type="text" readonly/><br>
 
-                <label for="yelpfood">Yelp Food Score:</label>
-                <input id="yelpfood" type="text" readonly/><br>
+            <label for="yelpfood">Yelp Food Score:</label>
+            <input id="yelpfood" type="text" readonly/><br>
 
-                <label for="yelpshopping">Yelp Shopping Score:</label>
-                <input id="yelpshopping" type="text" readonly/><br>
+            <label for="yelpshopping">Yelp Shopping Score:</label>
+            <input id="yelpshopping" type="text" readonly/><br>
 
-                <label for="yelpcommunity">Yelp Community Score:</label>
-                <input id="yelpcommunity" type="text" readonly/><br>
+            <label for="yelpcommunity">Yelp Community Score:</label>
+            <input id="yelpcommunity" type="text" readonly/><br>
 
-                <label for="walkscore">Walking Score:</label>
-                <input id="walkscore" type="text" readonly/><br>
+            <label for="walkscore">Walking Score:</label>
+            <input id="walkscore" type="text" readonly/><br>
 
-                <div style="height: 25px"></div>
-            </form>
+            <div style="height: 25px"></div>
+        </form>
+    </div>
+
+    <!-- Set up help bar -->
+    <div id="sf-help-bar">
+        <img id="help-icon" src="http://iconshow.me/media/images/ui/ios7-icons/png/512/gear.png"/>
+        <h3>Heat Maps</h3>
+        <div id="checkboxes">
+            <label style="padding-top: 20px">
+                <input onclick = "layertrigger('googlefood');" type="checkbox" />Google Food Data</label>
+            <label>
+                <input onclick = "layertrigger('googlecommunity');" type="checkbox"/>Google Community Data</label>
+            <label>
+                <input onclick = "layertrigger('googlebigshops');" type="checkbox" />Google BigShops Data</label>
+            <label>
+                <input onclick = "layertrigger('googlesmallshops');" type="checkbox"  />Google SmallShops Data</label>
+            <label>
+                <input onclick = "layertrigger('googletransit');" type="checkbox" />Google Transit Data</label>
+            <label>
+                <input onclick = "layertrigger('googletourist');" type="checkbox" />Google Tourist Data</label>
+            <label>
+                <input onclick = "layertrigger('yelpfood');" type="checkbox"/>Yelp Food Data</label>
+            <label>
+                <input onclick = "layertrigger('yelpshopping');" type="checkbox" />Yelp Shopping Data</label>
+            <label>
+                <input onclick = "layertrigger('yelpcommunity');" type="checkbox" />Yelp Community Data</label>
+            <label>
+                <input onclick = "layertrigger('walkscore');" type="checkbox" />Walk Score Data</label>
+            <label>
+                <input onclick = "for (key in AllScores){ if (key != 'average'){layertrigger(key)}};" type="checkbox" />Show All Layers</label>
         </div>
+    </div>
 
-        <div id="sf-help-bar">
-            <img id="help-icon" src="http://iconshow.me/media/images/ui/ios7-icons/png/512/gear.png" width="35px" style=""/>
+    <!-- Set up full screen map -->
+    <div class="heatmap" id="map"></div>
 
-            <h3>Heat Maps</h3>
-            <div id="checkboxes">
-                <label style="background-color:white; padding-top: 20px" >
-                    <input onclick = "layertrigger('googlefood');" type="checkbox" />Google Food Data</label>
+    <!-- Dependancies and external javascript code -->
 
-                <label style="background-color:white;">
-                    <input onclick = "layertrigger('googlecommunity');" type="checkbox"/>Google Community Data</label>
+    <!-- This is for the map view (leaflet.js) -->
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <script src="js/dependencies/heatmap.js"></script>
+    <script src="js/dependencies/leaflet-heatmap.js"></script>
 
-                <label style="background-color:white;">
-                    <input onclick = "layertrigger('googlebigshops');" type="checkbox" />Google BigShops Data</label>
+    <!-- Set up Google Maps Javascript API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdsGq2g7EJPonPoSutU98iQKL-9W3odG8&libraries=places" type="text/javascript"></script>
 
+    <!--  Default  Data File -->
+    <script src="DataFiles/SoofaDataCambridge.js"></script>
 
-                <label style="background-color:white;">
-                    <input onclick = "layertrigger('googlesmallshops');" type="checkbox"  />Google SmallShops Data</label>
+    <!-- Code for changing cities, resets all values and markers  -->
+    <script type="text/javascript" src="js/default.config.js"></script>
 
-                <label style="background-color:white;">
-                    <input onclick = "layertrigger('googletransit');" type="checkbox" />Google Transit Data</label>
-
-                <label style="background-color:white;">
-                    <input onclick = "layertrigger('googletourist');" type="checkbox" />Google Tourist Data</label>
-
-                <label style="background-color:white;">
-                    <input onclick = "layertrigger('yelpfood');" type="checkbox"/>Yelp Food Data</label>
-
-                <label style="background-color:white;">
-                    <input onclick = "layertrigger('yelpshopping');" type="checkbox" />Yelp Shopping Data</label>
-
-                <label style="background-color:white;">
-                    <input onclick = "layertrigger('yelpcommunity');" type="checkbox" />Yelp Community Data</label>
-
-                <label style="background-color:white;">
-                    <input onclick = "layertrigger('walkscore');" type="checkbox" />Walk Score Data</label>
-
-                <label style="background-color:white;">
-                    <input onclick = "for (key in AllScores){ if (key != 'average'){layertrigger(key)}};" type="checkbox" />Show All Layers</label>
-
-            </div>
-        </div>
-
-
-        <!-- Set up score displays -->
-        <div class="heatmap" id="map"></div>
-
-
-        <!-- Dependancies and external javascript code -->
-
-        <!-- This is for the map view (leaflet.js) -->
-        <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-        <script src="js/dependencies/heatmap.js"></script>
-        <script src="js/dependencies/leaflet-heatmap.js"></script>
-
-        <!-- Set up Google Maps Javascript API -->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdsGq2g7EJPonPoSutU98iQKL-9W3odG8&libraries=places" type="text/javascript"></script>
-
-        <!--  Default  Data File -->
-        <script src="DataFiles/SoofaDataCambridge.js"></script>
-
-        <!-- Code for changing cities, resets all values and markers  -->
-        <script type="text/javascript" src="js/default.config.js"></script>
-
-        <script type="text/javascript" src="js/map.js"></script>
-        <script type="text/javascript" src="js/main.js"></script>
-
-
+    <script type="text/javascript" src="js/map.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
     </body>
 </html>

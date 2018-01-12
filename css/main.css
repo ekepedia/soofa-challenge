@@ -95,13 +95,14 @@ h1 { position:absolute; background:white; padding:5px;}
     width: 300px;
     height: 25px;
     float: left;
-    border-style: groove;
+    border: solid grey 1px;
     border-radius: 5px;
     margin-left: 35px;
     margin-top: 10px;
     font-size: 10pt;
     color: black;
     background-color: white;
+    padding-left: 10px;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -166,6 +167,7 @@ h1 { position:absolute; background:white; padding:5px;}
 #help-icon {
     float: right;
     margin: 15%;
+    width: 35px;
 
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
@@ -177,6 +179,7 @@ h1 { position:absolute; background:white; padding:5px;}
 
 #checkboxes label {
     margin-top: 2px;
+    background-color: white;
 }
 
 #sf-nav h2{
@@ -211,15 +214,51 @@ h1 { position:absolute; background:white; padding:5px;}
     margin-left: 20px;
     font-size: 10pt;
     margin-top: 10px;
+    float: left;
 }
 
 #scoresform{
     font-size: 10pt;
-
+    clear: left;
+    margin-top: 20px;
 }
 
 #scoresform input {
     border: none;
     margin-top: 10px;
     font-size: 10pt;
+}
+
+#marker-icon {
+    float: left;
+    margin-top: 8px;
+    width: 20px;
+}
+
+@media screen and (max-device-width: 820px){
+    #mapsearch {
+        width: 200px;
+    }
+}
+
+@media screen and (max-device-width: 710px){
+    #mapsearch {
+       display: none;
+    }
+}
+
+@media screen and (max-device-width: 430px){
+
+    #city-dropdown {
+        float: none;
+    }
+
+    #city-dropdown select {
+        font-size: 10pt;
+        width: 150px;
+    }
+
+    #sf-nav h2 {
+        display: none;
+    }
 }

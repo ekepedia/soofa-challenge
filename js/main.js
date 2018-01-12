@@ -17,14 +17,6 @@ function geocodeLatLng(geocoder, lat, lng) {
     });
 }
 
-/// Heatmap Specifications ///
-
-
-/// If you want to have different colors, put this: gradient: {'.5': 'blue', '.8': 'red', '.95': 'white'}
-
-
-
-
 //// Scoring Section ////
 
 /// Get Scores of Closest Location ///
@@ -50,7 +42,6 @@ function closestscore (lat, lng, arr) {
 }
 
 /// Return scores between 0 and 10 ///
-
 function calculatescore(lat, lng, heatmapdata){
     score = closestscore(lat, lng, heatmapdata.data);
     return Math.round(1000*score/heatmapdata.max)/100; // Returns two decimal places
@@ -82,7 +73,6 @@ document.getElementById('selectcity').onchange = function(){
 
 
 /// Function for adding multiple heatmaps together ///
-
 function layertrigger(keyword){
     index = layersactive.indexOf(keyword);
     if (index > -1){
@@ -109,7 +99,6 @@ function layertrigger(keyword){
 
 
 /// Function to clone a javascript object ///
-
 function clone(obj) {
     // Handle the 3 simple types, and null or undefined
     if (null == obj || "object" != typeof obj) return obj;
@@ -156,7 +145,6 @@ function showCheckboxes() {
 }
 
 /// Code for Searchbox adding marker ///
-
 var searchBox = new google.maps.places.SearchBox(document.getElementById('mapsearch'));
 google.maps.event.addListener(searchBox, 'places_changed', function(){
 
@@ -199,7 +187,6 @@ google.maps.event.addListener(searchBox, 'places_changed', function(){
 });
 
 /// Code for Showing/Hiding Scores ///
-
 var theButton = document.getElementById('marker-icon');
 var shown = false;
 theButton.onclick = function() {
@@ -214,6 +201,7 @@ theButton.onclick = function() {
 };
 
 
+/// Code for Showing/Hiding Heat Maps ///
 var helpIcon = document.getElementById('help-icon');
 var helpShown = false;
 helpIcon.onclick = function() {
@@ -226,13 +214,11 @@ helpIcon.onclick = function() {
         helpShown = !helpShown;
     }
     else{
+        document.getElementById('sf-help-bar').style.height='270px';
         document.getElementById('sf-help-bar').style.width='250px';
         document.getElementById('sf-help-bar').style.padding='25px';
         document.getElementById('help-icon').style.margin='0%';
-        document.getElementById('sf-help-bar').style.height='270px';
         helpShown = !helpShown;
     }
 };
-
-// Code for Dashed Recntangle //
 

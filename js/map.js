@@ -1,4 +1,3 @@
-
 /////////////// Base Map Setup /////////////////////////////
 var baseLayer = L.tileLayer(
     'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
@@ -21,7 +20,6 @@ var baseMaps = {
 };
 
 /// Add Markers to Map on click, plus change scores when marker is dragged///
-
 function onMapClick(e) {
 
     marker = new L.marker(e.latlng, {draggable:'true'});
@@ -57,7 +55,6 @@ function onMapClick(e) {
     });
 
     map.addLayer(marker);
-
 }
 
 /// Update scores on click ///
@@ -76,20 +73,13 @@ var cfg1 = {"radius": .007, "maxOpacity": .8, "scaleRadius": true, "useLocalExtr
 
 var compositelayer = new HeatmapOverlay(cfg1);
 
-
 /// Set Data ///
-
-
 compositelayer.setData({max: 0, data:[]});
 
-
 // /// Create Map Layers ///
-
 var compositegroup = L.layerGroup([compositelayer]);
 
-
 /// Add Layers to Map ///
-
 map.addLayer(compositegroup);
 
 var rect = L.rectangle([northeastcoord, southwestcoord], { dashArray: "10", color: "#4d4d4d",  opacity: .8,  fillOpacity: 0});
