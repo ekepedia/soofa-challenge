@@ -235,19 +235,19 @@ h1 { position:absolute; background:white; padding:5px;}
     width: 20px;
 }
 
-@media screen and (max-device-width: 820px){
+@media (max-device-width: 820px){
     #mapsearch {
         width: 200px;
     }
 }
 
-@media screen and (max-device-width: 710px){
+@media (max-device-width: 710px){
     #mapsearch {
        display: none;
     }
 }
 
-@media screen and (max-device-width: 430px){
+@media (max-device-width: 430px){
 
     #city-dropdown {
         float: none;
